@@ -33,8 +33,12 @@
             <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><button>Login</button></li>
-            <li><button>Register</button></li>
+            <% if !user_signed_in? %>
+              <li><%= link_to 'Login', [:new, :user, :session], class: 'btn' %></li>
+            <% else %>
+              <li><%= link_to 'Logout', [:destroy, :user, :session], :method => :delete, class: 'btn' %></li>
+            <% end %>
+            <li><%= link_to 'Register', [:new, :user, :registration], class: 'btn' %></li>
           </ul>
         </li>
        <li class="dropdown">
