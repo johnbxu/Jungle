@@ -2,12 +2,63 @@
 <html>
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    <style>
+      table, th, td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <h1>Welcome to jungle.com</h1>
     <p>
       You have successfully purchased the following items
     </p>
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">Product</th>
+          <th>Unit Price</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <% @subtotal = 0 %>
+      <% @order.line_items.each do |item| %>
+        <% @image = "http://localhost:3000#{item.product.image.tiny}" %>
+        <tr>
+          <td>
+            <%= image_tag(@image) %>
+          </td>
+          <td>
+            <h4><%= item.product.name %></h4>
+            <br>
+            <p><%= item.product.description %></p>
+          </td>
+          <td>
+            <%= item.item_price %>
+          </td>
+          <td>
+            <%= item.quantity %>
+          </td>
+          <td>
+            <%= item.item_price * item.quantity %>
+          </td>
+        </tr>
+        <% @subtotal += item.item_price * item.quantity %>
+      <% end %>
+
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            TOTAL:
+          </th>
+          <th>
+            <%= @subtotal %>
+          </th>
+        </tr>
+      </tfoot>
+    </table>
+
     <p>Thanks for joining and have a great day!</p>
   </body>
 </html>
