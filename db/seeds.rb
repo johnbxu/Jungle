@@ -132,5 +132,33 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+## COMMENTS
+
+puts "Re-creating reviews"
+
+Review.destroy_all
+
+products = Product.all
+products.each do |product|
+  product.reviews.create!({
+    user_id: 0,
+    rating: 1,
+    description: 'This thing sucks!',
+    created_at: Time.now,
+    updated_at: Time.now,
+  })
+end
+products.each do |product|
+  product.reviews.create!({
+    user_id: 1,
+    rating: 5,
+    description: 'This thing rocks!',
+    created_at: Time.now,
+    updated_at: Time.now,
+  })
+end
+
 
 puts "DONE!"
