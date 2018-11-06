@@ -1,5 +1,6 @@
 <section class="cart-show">
 
+  <% if !cart.empty? %>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -48,5 +49,11 @@
       <% end %>
     </div>
   </div>
+  <% else %>
+  <div class="jumbotron" style="text-align: center">
+    <h3>🦄🦄🦄Your cart is currently empty🦄🦄🦄</h4>
+    <h3><%= link_to 'Home', :root %></h4>
+  </div>
+  <% end %>
 
 </section>
