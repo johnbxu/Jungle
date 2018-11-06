@@ -28,9 +28,10 @@
       </div>
     </div>
     <% @reviews.each do |review| %>
-    <div>
+    <div style="margin: 4rem;">
       <h4><%= review.id %></h4>
       <p><%= review.description %></p>
+      <p><%= '⭐' * review.rating %></p>
     </div>
     <% end %>
 
