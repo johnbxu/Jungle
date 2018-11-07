@@ -83,4 +83,12 @@ main section.products-show {
       max-width: 100%;
     }
   }
+  .reviews {
+    margin: 4rem;
+    width: 20rem;
+  }
+  .review-form {
+    display: flex;
+    flex-direction: row;
+  }
 }

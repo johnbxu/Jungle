@@ -21,7 +21,7 @@
           <dt>Quantity</dt>
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
-          <dd><%= @product.price %></dd>
+          <dd>$<%= @product.price %></dd>
           <dt>Average Rating</dt>
           <dd><%= @average_rating %> <%= '⭐' * @average_rating %></dd>
 
@@ -30,8 +30,8 @@
       </div>
     </div>
     <% @reviews.each do |review| %>
-    <div style="margin: 4rem; width: 20rem;">
-      <h4><%= review.user.name %></h4>
+    <div class="reviews">
+      <h4>Review by <%= review.user.name %></h4>
       <p><%= '⭐' * review.rating %></p>
       <h5><%= review.created_at %></h5>
       <p style="word-break: break-all; width: 50rem;"><%= review.description %></p>
@@ -42,9 +42,17 @@
     <% end %>
     <% if current_user %>
       <%= form_for [@product, @review] do |f| %>
-        <%= f.text_area :description %>
-        <%= f.select :rating, [1,2,3,4,5] %>
-        <%= f.submit "Submit", class: "btn" %>
+        <div class="review-form">
+          <div style="display: flex;">
+            <%= f.text_area :description %>
+          </div>
+          <div style="display: flex;">
+            <%= f.select :rating, [1,2,3,4,5] %>
+            <%= f.submit "Submit", class: "btn" %>
+
+          </div>
+
+        </div>
       <% end %>
     <% end %>
   </article>
