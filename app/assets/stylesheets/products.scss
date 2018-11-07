@@ -85,10 +85,30 @@ main section.products-show {
   }
   .reviews {
     margin: 4rem;
-    width: 20rem;
+    width: 40rem;
   }
   .review-form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    margin-left: 4rem;
+    width: 40rem;
+  }
+  .rating {
+    padding-top: 0.5rem
+
+
+  }
+  .rating span {
+    font-size: 1.5rem;
+  }
+  .rating-submit {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20rem;
+  }
+  #review_description {
+    width: 40rem;
+    height: 20rem;
   }
 }

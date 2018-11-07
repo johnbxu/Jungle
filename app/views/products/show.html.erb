@@ -43,14 +43,16 @@
     <% if current_user %>
       <%= form_for [@product, @review] do |f| %>
         <div class="review-form">
-          <div style="display: flex;">
+          <p2>Write a review:</p2>
             <%= f.text_area :description %>
-          </div>
-          <div style="display: flex;">
-            <%= f.select :rating, [1,2,3,4,5] %>
-            <%= f.submit "Submit", class: "btn" %>
+            <div class="rating-submit">
+              <div class="rating">
+                <span>Rating: </span><%= f.select :rating, [1,2,3,4,5], {}, {class: 'custom-select', prompt: 'Select rating', include_blank: "Rating"} %>
+              </div>
+              <%= f.submit "Submit", class: "btn" %>
 
-          </div>
+            </div>
+
 
         </div>
       <% end %>
