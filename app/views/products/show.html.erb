@@ -43,7 +43,7 @@
     <% if current_user %>
       <%= form_for [@product, @review] do |f| %>
         <div class="review-form">
-          <p2>Write a review:</p2>
+          <p>Write a review:</p>
             <%= f.text_area :description %>
             <div class="rating-submit">
               <div class="rating">

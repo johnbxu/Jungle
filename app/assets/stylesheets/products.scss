@@ -92,7 +92,15 @@ main section.products-show {
     flex-direction: column;
     margin-left: 4rem;
     width: 40rem;
+    p {
+      font-size: 2rem;
+    }
+    .custom-select {
+      padding: 0.5rem;
+    }
+
   }
+
   .rating {
     padding-top: 0.5rem
 
