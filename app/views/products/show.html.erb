@@ -36,7 +36,7 @@
       <h5><%= review.created_at %></h5>
       <p style="word-break: break-all; width: 50rem;"><%= review.description %></p>
       <% if review.user.id == current_user.id %>
-        <%= link_to fa_icon('trash'), [review.product, :review], class: 'btn btn-sm btn-danger' %>
+        <%= link_to fa_icon('trash'), [@product, review], method: 'delete', class: 'btn btn-sm btn-danger' %>
       <% end %>
     </div>
     <% end %>
