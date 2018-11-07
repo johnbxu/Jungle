@@ -31,3 +31,5 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 * list all products that belong to each Category
 * allow adding and removing of products to categories
+* up and down voting reviews
+* see average ratings and breakdown of ratings

@@ -143,7 +143,7 @@ Review.destroy_all
 products = Product.all
 products.each do |product|
   product.reviews.create!({
-    user_id: 0,
+    user_id: 2,
     rating: 1,
     description: 'This thing sucks!',
     created_at: Time.now,

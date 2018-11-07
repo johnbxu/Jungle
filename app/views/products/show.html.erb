@@ -22,25 +22,31 @@
           <dd><%= @product.quantity %></dd>
           <dt>Price</dt>
           <dd><%= @product.price %></dd>
+          <dt>Average Rating</dt>
+          <dd><%= @average_rating %> <%= '⭐' * @average_rating %></dd>
 
 
         </dl>
       </div>
     </div>
     <% @reviews.each do |review| %>
-    <div style="margin: 4rem;">
-      <h4><%= review.id %></h4>
-      <p><%= review.description %></p>
+    <div style="margin: 4rem; width: 20rem;">
+      <h4><%= review.user.name %></h4>
       <p><%= '⭐' * review.rating %></p>
+      <h5><%= review.created_at %></h5>
+      <p style="word-break: break-all; width: 50rem;"><%= review.description %></p>
+      <% if review.user.id == current_user.id %>
+        <%= link_to fa_icon('trash'), [review.product, :review], class: 'btn btn-sm btn-danger' %>
+      <% end %>
     </div>
     <% end %>
-    <%= form_for [@product, @review] do |f| %>
-      <%= f.text_area :description %>
-      <%= f.select :rating, [1,2,3,4,5] %>
-      <%= f.submit "Submit", class: "btn" %>
-
+    <% if current_user %>
+      <%= form_for [@product, @review] do |f| %>
+        <%= f.text_area :description %>
+        <%= f.select :rating, [1,2,3,4,5] %>
+        <%= f.submit "Submit", class: "btn" %>
+      <% end %>
     <% end %>
-
   </article>
 
 </section>
