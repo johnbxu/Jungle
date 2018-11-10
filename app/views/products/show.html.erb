@@ -31,11 +31,11 @@
     </div>
     <% @reviews.each do |review| %>
     <div class="reviews">
-      <h4>Review by <%= review.user.name %></h4>
+      <h4>Review by <%= review.user.first_name %></h4>
       <p><%= '⭐' * review.rating %></p>
       <h5><%= review.created_at %></h5>
       <p style="word-break: break-all; width: 50rem;"><%= review.description %></p>
-      <% if review.user.id == current_user.id %>
+      <% if current_user && review.user.id == current_user.id %>
         <%= link_to fa_icon('trash'), [@product, review], method: 'delete', class: 'btn btn-sm btn-danger' %>
       <% end %>
     </div>

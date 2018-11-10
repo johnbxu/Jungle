@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
+require 'faker'
 puts "Seeding Data ..."
 
 # Helper functions
@@ -133,6 +133,7 @@ cat3.products.create!({
 })
 
 ## USERS
+User.destroy_all
 
 ## COMMENTS
 
@@ -145,7 +146,7 @@ products.each do |product|
   product.reviews.create!({
     user_id: 2,
     rating: 1,
-    description: 'This thing sucks!',
+    description: Faker::MichaelScott.quote,
     created_at: Time.now,
     updated_at: Time.now,
   })
@@ -154,7 +155,7 @@ products.each do |product|
   product.reviews.create!({
     user_id: 1,
     rating: 5,
-    description: 'This thing rocks!',
+    description: Faker::MichaelScott.quote,
     created_at: Time.now,
     updated_at: Time.now,
   })
