@@ -63,7 +63,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     faker (1.9.1)
-      i18n (~> 0.5)
+      i18n (>= 0.7)
     font-awesome-rails (4.5.0.1)
       railties (>= 3.2, < 5.1)
     globalid (0.3.6)
@@ -235,7 +235,7 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 RUBY VERSION
-   ruby 2.3.5p376
+   ruby 2.3.8p459
 
 BUNDLED WITH
-   1.16.1
+   1.16.2
