@@ -8,7 +8,8 @@ class UserController < ApplicationController
       session[:user_id] = user.id
       redirect_to '/'
     else
-      redirect_to '/signup'
+      @duplicate = true
+      render 'new'
     end
   end
 
