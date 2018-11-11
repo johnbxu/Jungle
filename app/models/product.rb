@@ -10,5 +10,6 @@ class Product < ActiveRecord::Base
   validates :price, presence: true
   validates :quantity, presence: true
   validates :category, presence: true
+  validates :quantity, numericality: { greater_than: -1 }
 
 end

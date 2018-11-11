@@ -27,6 +27,10 @@ RSpec.describe Product, type: :model do
       expect(@product).to be_invalid
     end
 
+    it 'should be invalid if quantity is below 0' do
+      @product = Product.new(name: 'some name', price: 123, quantity: -1, category: Category.new)
+      expect(@product).to be_invalid
+    end
 
   end
 
