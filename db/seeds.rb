@@ -38,7 +38,7 @@ Product.destroy_all
 cat1.products.create!({
   name:  'Men\'s Classy shirt',
   description: Faker::Hipster.paragraph(4),
-  image: open_asset('apparel1.jpg'),
+  image: 'https://s3.us-east-2.amazonaws.com/jungle-rails-photos/apparel1.jpg',
   quantity: 10,
   price: 64.99
 })
