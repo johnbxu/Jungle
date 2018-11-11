@@ -219,7 +219,7 @@ DEPENDENCIES
   json
   money-rails
   newrelic_rpm
-  pg
+  pg (~> 1.1.3)
   puma
   quiet_assets
   rails
