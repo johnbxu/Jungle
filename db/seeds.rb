@@ -135,6 +135,22 @@ cat3.products.create!({
 ## USERS
 User.destroy_all
 
+User.create!({
+  first_name: 'John',
+  last_name: 'Xu',
+  email: 'johnbxu@gmail.com',
+  password: '123456',
+  password_confirmation: '123456'
+  })
+
+User.create!({
+  first_name: 'Katie',
+  last_name: 'Kish',
+  email: 'johnbxu2@gmail.com',
+  password: '123456',
+  password_confirmation: '123456'
+  })
+
 ## COMMENTS
 
 puts "Re-creating reviews"
