@@ -27,7 +27,7 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
+      <li class="dropdown" class='sessionDropdown'>
          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
            <% if current_user %>
             Logged in as <%= current_user.first_name %> | Logout
@@ -38,7 +38,7 @@
          </a>
          <ul class="dropdown-menu">
             <% if !current_user %>
-              <li><%= link_to 'Login', '/login', class: 'btn' %></li>
+              <li><%= link_to 'Login', '/login', class: 'btn', id: 'login' %></li>
             <% else %>
               <li><%= link_to 'Logout', '/logout', class: 'btn' %></li>
             <% end %>
