@@ -1,3 +1,16 @@
+$background_color: #D0EFB1;
+$nav_color: #FFE19C;
+$tertiary_color: #9DC3C2;
+
+.navbar {
+  background-color: $tertiary_color;
+}
+
+.btn-primary {
+  background-color: $tertiary_color;
+  border-color: $tertiary_color;
+}
+
 main section.products-index,
 main section.categories-show {
 
@@ -31,7 +44,7 @@ main section.categories-show {
         position: absolute;
         bottom: 0;
         left:   0;
-        background-color: #EEE;
+        background-color: #eee;
         padding: 15px;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px;
@@ -45,7 +58,7 @@ main section.categories-show {
         top: 0;
         right: 0;
         padding: 10px;
-        background-color: #eee;
+        background-color: $tertiary_color;
         border-top-right-radius: 4px;
         border-bottom-left-radius: 20px;
         font-size: 0.8em;

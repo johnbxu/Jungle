@@ -7,12 +7,23 @@
 @import "products";
 @import "user";
 
+@import url('https://fonts.googleapis.com/css?family=Poiret+One');
+
 // Global
 body {
   padding-top: 70px;
+}
+#brand {
+  font-family: 'Poiret One', cursive;
+  font-size: 3rem;
+  font-weight: 700;
 }
 
 // Bootstrap adjustments
 form.button_to {
   display: inline;
+}
+
+#nav a {
+  color: #562d2d;
 }
