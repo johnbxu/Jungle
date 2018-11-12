@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to a single product's page", type: :feature, js: true do
+RSpec.feature "Visitor clicks on an Add button", type: :feature, js: true do
   before :each do
     @category = Category.create! name: 'Apparel'
 
@@ -17,16 +17,16 @@ RSpec.feature "Visitor navigates to a single product's page", type: :feature, js
   end
 
 
-  scenario "They see the product's information" do
+  scenario "They see the cart being updated" do
     # ACT
     @product = Product.find(1)
     visit root_path
-    click_on @product.name
+    click_on('Add', match: :first)
 
     # DEBUG / VERIFY
     save_screenshot
 
-    expect(page).to have_css '.products-show'
+    within('.navbar') { expect(page).to have_content('(1)') }
   end
 
 end
